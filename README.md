@@ -37,3 +37,7 @@ This is a heuristic tool for learning and triage, not a replacement for a mail s
 Add more brands, check attachment hashes against a local list, add a batch mode for a folder of emails, or export findings as STIX.
 
 ![Phishlens report](images/report.png)
+
+## Lessons from real-world testing
+
+Tested on real inbox mail, the first version flagged boilerplate like "log in" in subscription footers and showed unreadable tracking URLs. Fixes: click-tracking links are now decoded to their real destination, language rules count for less when the sender passes DMARC, and reports list which authentication checks passed. A clean score means "no red flags found", not "safe": authentication rpoves who sent a message, not whether the are honest.
