@@ -36,4 +36,4 @@ This is a heuristic tool for learning and triage, not a replacement for a mail s
 
 Add more brands, check attachment hashes against a local list, add a batch mode for a folder of emails, or export findings as STIX.
 
-1[Phishlens report](images/report.png)
+![Phishlens report](images/report.png)
