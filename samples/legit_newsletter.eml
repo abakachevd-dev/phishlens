@@ -1,0 +1,12 @@
+Received: from mail.example-books.org (mail.example-books.org [203.0.113.5])
+ by mx.google.com with ESMTPS; Mon, 23 Nov 2026 09:00:10 -0800
+Authentication-Results: mx.google.com; spf=pass; dkim=pass; dmarc=pass
+From: "Example Books" <news@example-books.org>
+Return-Path: <bounce@mail.example-books.org>
+To: reader@example.org
+Subject: November reading list
+Date: Mon, 23 Nov 2026 17:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html><body><p>Hi! Our November picks are ready.</p><p><a href="https://www.example-books.org/november">www.example-books.org/november</a></p></body></html>

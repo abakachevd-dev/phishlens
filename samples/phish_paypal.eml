@@ -1,0 +1,15 @@
+Received: from mail.secure-mail-box.ru (unknown [185.234.12.9])
+ by mx.google.com with ESMTP; Mon, 23 Nov 2026 08:14:02 -0800
+Received: from localhost (localhost [127.0.0.1])
+ by mail.secure-mail-box.ru with SMTP; Mon, 23 Nov 2026 16:13:58 +0000
+Authentication-Results: mx.google.com; spf=fail smtp.mailfrom=paypa1-secure.com; dkim=none; dmarc=fail
+From: "PayPal Security" <service@paypa1-secure.com>
+Reply-To: help@secure-mail-box.ru
+Return-Path: <bounce@secure-mail-box.ru>
+To: victim@example.org
+Subject: URGENT: Your account has been suspended
+Date: Mon, 23 Nov 2026 16:13:58 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html><body><p>Dear customer,</p><p>We noticed unusual activity. Your account has been suspended. You must verify your identity within 24 hours or your account will be closed.</p><p><a href="http://185.234.12.9/paypal/login.php">https://www.paypal.com/verify</a></p><p>Thank you, PayPal Security</p></body></html>
