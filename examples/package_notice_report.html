@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhishLens report</title><style>
+:root{--bg:#f2f5f9;--card:#fff;--ink:#14202e;--mut:#5d6b7c;--line:#dde3ea;--high:#c2362b;--medium:#b4690e;--low:#2b6cb0;--ok:#23805a;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#0e151d;--card:#18212c;--ink:#e8edf3;--mut:#93a1b1;--line:#2b3846;--high:#f0705f;--medium:#e3a24a;--low:#6aa8ee;--ok:#5cc79a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:820px;margin:0 auto;padding:32px 20px}h1{margin:0 0 4px;font-size:1.6rem}h2{margin:32px 0 12px;font-size:1.1rem}
+.mut,small{color:var(--mut)}.hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:20px}
+.gauge{width:240px;max-width:100%}.verdict{font-size:1.5rem;font-weight:700}.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin:10px 0;background:var(--line);min-width:200px}
+.f{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--low);border-radius:10px;padding:10px 14px;margin-bottom:10px}
+.f.high{border-left-color:var(--high)}.f.medium{border-left-color:var(--medium)}.f p{margin:4px 0 0;color:var(--mut)}
+.pts{float:right;font-weight:700}ol{padding-left:20px}li{margin-bottom:8px;overflow-wrap:anywhere}
+</style><main>
+<h1>PhishLens report</h1><p class="mut">Subject: Final notice: package could not be delivered<br>From: USPS Delivery &lt;notice@usps-redelivery.help&gt;</p>
+<section class="hero"><svg class="gauge" viewBox="0 0 200 120" role="img" aria-label="Risk score 96 out of 100">
+<path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--line)" stroke-width="16" stroke-linecap="round"/>
+<path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--high)" stroke-width="16" stroke-linecap="round" stroke-dasharray="241.2 251.3"/>
+<text x="100" y="92" text-anchor="middle" font-size="38" font-weight="700" fill="var(--ink)">96</text>
+<text x="100" y="114" text-anchor="middle" font-size="12" fill="var(--mut)">out of 100</text></svg>
+<div><div class="verdict" style="color:var(--high)">Likely phishing</div>
+<div class="bar"><span style="flex:3;background:var(--high)"></span><span style="flex:5;background:var(--medium)"></span><span style="flex:1;background:var(--low)"></span></div><small>3 high, 5 medium, 1 low findings</small></div></section>
+<h2>Why this score</h2><div class="f high"><span class="pts">+20</span><b>Link text doesn&#x27;t match destination</b><p>Displays www.usps.com but actually goes to bit.ly.</p></div><div class="f high"><span class="pts">+16</span><b>DMARC fail</b><p>The receiving server reported DMARC=fail, so the sender may not be who they claim.</p></div><div class="f high"><span class="pts">+12</span><b>SPF softfail</b><p>The receiving server reported SPF=softfail, so the sender may not be who they claim.</p></div><div class="f medium"><span class="pts">+12</span><b>Urgency language</b><p>Pressure phrases found: immediately, act now.</p></div><div class="f medium"><span class="pts">+10</span><b>Reply-To domain mismatch</b><p>From is @usps-redelivery.help but Reply-To is @gmail.com, so replies go somewhere else.</p></div><div class="f medium"><span class="pts">+10</span><b>Return-Path domain mismatch</b><p>From is @usps-redelivery.help but Return-Path is @mailer-bounce.example, so replies go somewhere else.</p></div><div class="f medium"><span class="pts">+8</span><b>URL shortener hides destination</b><p>bit.ly</p></div><div class="f medium"><span class="pts">+4</span><b>DKIM not verified</b><p>No passing DKIM result was found in the headers.</p></div><div class="f low"><span class="pts">+4</span><b>Unencrypted http link</b><p>bit.ly</p></div>
+<h2>Delivery path (oldest first)</h2><ol><li><b>mail.badhost.example</b> to mx.google.com<br><small>Mon, 23 Nov 2026 10:02:11 -0800</small></li></ol>
+<h2>Links found</h2><ol><li>http://bit.ly/3xYzRedeliver</li></ol>
+</main></html>
