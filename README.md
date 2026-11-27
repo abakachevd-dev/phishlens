@@ -1,4 +1,5 @@
 # PhishLens
+![tests](https://github.com/abakachevd-dev/phishlens/actions/workflows/tests.yml/badge.svg)
 
 An offline phishing email analyzer. Feed it a raw `.eml` file and it returns a 0-100 risk score, a plain-English explanation of every finding, and a visual HTML report. Nothing is sent over the network, so it is safe to run on suspicious emails.
 
