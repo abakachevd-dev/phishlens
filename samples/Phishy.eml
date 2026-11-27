@@ -1,0 +1,685 @@
+Delivered-To: mirdmir@gmail.com
+Received: by 2002:a8a:1244:0:b0:64d:b27a:e592 with SMTP id b4csp520109ocp;
+        Fri, 6 Nov 2026 03:13:50 -0800 (PST)
+X-Received: by 2002:a17:90a:778a:b0:3b0:e2a9:3466 with SMTP id 98e67ed59e1d1-3b0e2a941b9mr816567a91.16.1793963630674;
+        Fri, 06 Nov 2026 03:13:50 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1793963630; cv=none;
+        d=google.com; s=arc-20260327;
+        b=QOA9Kizb/96krQR9WqRLEMamAxg0uQuLdJ2bT9QK0BVJ5lLP+E/P6pki14OOF4wyil
+         AQWXG3SG7WSdW/nzyB/YBOal3MUNp9+aEI/fIEtIfxeGSVG6q3eNupapcnFOdgHBFPyQ
+         NAPDUB0ZxDi7MLKwZXTJlAjV+XybZir8PjRTwXm9K/6TOoLv1Ej2LEoW3DCdyEmMrveF
+         vW0iikHPH8LNj8nNCe5PW5KQS5C/Tjz5O/73WIvXQAIPCtvOqnjwts+ST+5lomJGsZzq
+         xSgDrqrwNEQYiODmIIXMcgBdVhE1Gvc+J70ARBNdB/UbdiQDB/cLbjCCOYVSxAl0nEqo
+         1e9Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=mime-version:date:to:dep_msg_id_info:subject:from:reply-to
+         :dep_msg_id:dep_mf_msg_id:message-id:feedback-id
+         :content-transfer-encoding:dkim-signature;
+        bh=trGQeQYxo/45PSDjmnsvKaE9kPjpMPdesfA+5I9A7Pc=;
+        fh=s1lZsRSEa5O8+mfuizqF8rt3NopZxjozGgb3zcJBToE=;
+        b=rWjhM3rUbwKTMfJYTZYarfZmGpOuph7gWVZKsgEtkZ1dbcWFZ1RQ5z0kjSl1FGBZfv
+         O+KF7x2yY/fTJ9gT+rFd+eo0kNitu59PpG873TajuTBlmU+6CPaTx4PLTceUh635ysKq
+         /RyMcKiXHIeetD+b0aS/t5xIkv6wrJUydeEDHCVGYAu4xfi4yr8dvc6ySj856A4j902D
+         pPlmkTeIvlvF4EiQ9QF4PyTxLvpFzVXhKF/NsRISBtboSGISB8tMYeLBTrH9P1lZTjZq
+         hrFugkle93yQqrTqJmoa1ORUAVumzR9zpu87tSJxglgdAMF20GRjl1nb4M9Fu/pQ1mKe
+         Ndrg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@proxyvote.com header.s=dkim2048 header.b=GbHDmJuK;
+       spf=pass (google.com: domain of notifications@tsr.bounce.proxyvote.com designates 34.214.53.168 as permitted sender) smtp.mailfrom=notifications@tsr.bounce.proxyvote.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=proxyvote.com
+Return-Path: <notifications@tsr.bounce.proxyvote.com>
+Received: from mail4.tsrbrcc.prd.dep.digital-delivery.com (mail4.tsrbrcc.prd.dep.digital-delivery.com. [34.214.53.168])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-cdb706bd9fbsi2339832a12.53.2026.11.06.03.13.50
+        for <MIRDMIR@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 06 Nov 2026 03:13:50 -0800 (PST)
+Received-SPF: pass (google.com: domain of notifications@tsr.bounce.proxyvote.com designates 34.214.53.168 as permitted sender) client-ip=34.214.53.168;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@proxyvote.com header.s=dkim2048 header.b=GbHDmJuK;
+       spf=pass (google.com: domain of notifications@tsr.bounce.proxyvote.com designates 34.214.53.168 as permitted sender) smtp.mailfrom=notifications@tsr.bounce.proxyvote.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=proxyvote.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proxyvote.com;
+	s=dkim2048; t=1793963630; i=@proxyvote.com;
+	bh=trGQeQYxo/45PSDjmnsvKaE9kPjpMPdesfA+5I9A7Pc=;
+	h=Reply-To:From:Subject:To:Date;
+	b=GbHDmJuKyhOR4be363nxOS8sA3zJKZ/DIKaB8EhGcSItRtKqenWP4c+YLfuWYK2es
+	 +PtN8dkDxCE57SGa8osqgtZlh8n8tG2PYXdI0a85+EVQ2JmjZYXudz+ByAEY6m406J
+	 W9ySHB0dermD6xC1ql6t8lj4XUYYNyG2CxBx/eROHFY6YjJS4opYD7y4TVCB9Xu2hq
+	 FYLmSjUZmJN9Q+5d7qUe5PMYNR4n6vq61r6oYnvvqNQOYnJ/FT56MSir3P/TpUlugd
+	 juRv0QNVFNVXGSb3jEanFBQFcWnfx8/ik1DgEftTs6XwDCgyQZ7tfBxhWm5bQxuFoQ
+	 aswTfWqSJu/6g==
+X-MSFBL: sTKJV30FfzX1/9+Fu5UIQRwuV0yjvAv02nw8EWgyViA=|eyJ0ZW1wbGF0ZV9jb25
+	0ZW50X3R5cGUiOiJpbmxpbmVfcGFydHNfd2l0aF9zdWJzdGl0dXRpb25zIiwidGV
+	uYW50X2lkIjoia2V5c3BhY2VfZGVmYXVsdCIsInNuaXBwZXRfY291bnQiOiIwIiw
+	ib3Blbl90cmFja2luZyI6IjEiLCJjbGlja190cmFja2luZyI6IjEiLCJyY3B0X3R
+	hZ3MiOlsgXSwiY3VzdG9tZXJfaWQiOiIxIiwidGVtcGxhdGVfaWQiOiJ0ZW1wbGF
+	0ZV8xNTA0NTcxMDE1NDMyMzQ3NSIsInIiOiJNSVJETUlSQGdtYWlsLmNvbSIsImc
+	iOiJkZWZhdWx0IiwidGVtcGxhdGVfdmVyc2lvbiI6IjAiLCJtZXNzYWdlX2lkIjo
+	iMDAwMDZlYjZlZDZhYTM0OTg5ZmQiLCJ0cmFuc21pc3Npb25faWQiOiIxNTA0NTc
+	xMDE1NDMyMzQ3NSIsInN1YmFjY291bnRfaWQiOiIwIiwiYiI6ImRlZmF1bHQiLCJ
+	yY3B0X21ldGEiOnsgImRlcF9ydW5faWQiOiAiOTE0MDE3IiwgImRlcF9tc2dfaWQ
+	iOiAiOTE0MDE3fDI5MTUxNjN8Mjc0NWMzMGEtNjViNS00MTNjLWExYmQtMTZjMTY
+	zMTAwZDNiIiB9LCJjYW1wYWlnbl9pZCI6IlJFQUxUSU1FRU1BSUxTLklORk9DVVN
+	fUFhZIn0=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+Feedback-ID: 914017:DEP_BR
+Message-ID: <98.DF.18851.E66BDEA6@awuw2pbrcctsmtm-20>
+DEP_MF_MSG_ID: <$P59342_0_4087254659354753_3656766$003656768@adp-ics.com>
+DEP_MSG_ID: 2745c30a-65b5-413c-a1bd-16c163100d3b
+Reply-To: <id@proxyvote.com>
+From: "" <id@proxyvote.com>
+Subject: META PLATFORMS, INC. Important Information
+DEP_MSG_ID_INFO: 914017:2915163:inlinetemplate:inlinetemplate
+To: MIRDMIR@GMAIL.COM
+Date: Fri, 06 Nov 2026 06:13:50 -0500
+MIME-Version: 1.0
+
+<!doctype html>=0D=0A<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtm=
+l" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microso=
+ft-com:office:office">=0D=0A=0D=0A<head>=0D=0A  <title>=0D=0A    =0D=0A  </=
+title>=0D=0A  <!--[if !mso]><!-->=0D=0A  <meta http-equiv=3D"X-UA-Compatibl=
+e" content=3D"IE=3Dedge" />=0D=0A  <!--<![endif]-->=0D=0A  <meta http-equiv=
+=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />=0D=0A  <meta na=
+me=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1" />=0D=
+=0A  <style type=3D"text/css">=0D=0A    #outlook a {=0D=0A      padding: 0;=
+=0D=0A    }=0D=0A=0D=0A    body {=0D=0A      margin: 0;=0D=0A      padding:=
+ 0;=0D=0A      -webkit-text-size-adjust: 100%;=0D=0A      -ms-text-size-adj=
+ust: 100%;=0D=0A    }=0D=0A=0D=0A    table,=0D=0A    td {=0D=0A      border=
+-collapse: collapse;=0D=0A      mso-table-lspace: 0pt;=0D=0A      mso-table=
+-rspace: 0pt;=0D=0A    }=0D=0A=0D=0A    img {=0D=0A      border: 0;=0D=0A  =
+    height: auto;=0D=0A      line-height: 100%;=0D=0A      outline: none;=
+=0D=0A      text-decoration: none;=0D=0A      -ms-interpolation-mode: bicub=
+ic;=0D=0A    }=0D=0A=0D=0A    p {=0D=0A      display: block;=0D=0A      mar=
+gin: 13px 0;=0D=0A    }=0D=0A=0D=0A  </style>=0D=0A  <!--[if mso]>=0D=0A   =
+ <noscript>=0D=0A    <xml>=0D=0A    <o:OfficeDocumentSettings>=0D=0A      <=
+o:AllowPNG/>=0D=0A      <o:PixelsPerInch>96</o:PixelsPerInch>=0D=0A    </o:=
+OfficeDocumentSettings>=0D=0A    </xml>=0D=0A    </noscript>=0D=0A    <![en=
+dif]-->=0D=0A  <!--[if lte mso 11]>=0D=0A    <style type=3D"text/css">=0D=
+=0A      .mj-outlook-group-fix { width:100% !important; }=0D=0A    </style>=
+=0D=0A    <![endif]-->=0D=0A  <!--[if !mso]><!-->=0D=0A  <link href=3D"http=
+s://fonts.googleapis.com/css=3Ffamily=3DOpen+Sans:300,400,500,700" rel=3D"s=
+tylesheet" type=3D"text/css" />=0D=0A  <style type=3D"text/css">=0D=0A    @=
+import url(https://fonts.googleapis.com/css=3Ffamily=3DOpen+Sans:300,400,50=
+0,700);=0D=0A=0D=0A  </style>=0D=0A  <!--<![endif]-->=0D=0A  <style type=3D=
+"text/css">=0D=0A    @media only screen and (min-width:480px) {=0D=0A      =
+.mj-column-per-100 {=0D=0A        width: 100% !important;=0D=0A        max=
+-width: 100%;=0D=0A      }=0D=0A=0D=0A      .mj-column-per-49 {=0D=0A      =
+  width: 49% !important;=0D=0A        max-width: 49%;=0D=0A      }=0D=0A=0D=
+=0A      .mj-column-per-2 {=0D=0A        width: 2% !important;=0D=0A       =
+ max-width: 2%;=0D=0A      }=0D=0A=0D=0A      .mj-column-per-51 {=0D=0A    =
+    width: 51% !important;=0D=0A        max-width: 51%;=0D=0A      }=0D=0A=
+=0D=0A      .mj-column-per-10 {=0D=0A        width: 10% !important;=0D=0A  =
+      max-width: 10%;=0D=0A      }=0D=0A=0D=0A      .mj-column-per-80 {=0D=
+=0A        width: 80% !important;=0D=0A        max-width: 80%;=0D=0A      }=
+=0D=0A    }=0D=0A=0D=0A  </style>=0D=0A  <style media=3D"screen and (min-wi=
+dth:480px)">=0D=0A    .moz-text-html .mj-column-per-100 {=0D=0A      width:=
+ 100% !important;=0D=0A      max-width: 100%;=0D=0A    }=0D=0A=0D=0A    .mo=
+z-text-html .mj-column-per-49 {=0D=0A      width: 49% !important;=0D=0A    =
+  max-width: 49%;=0D=0A    }=0D=0A=0D=0A    .moz-text-html .mj-column-per-2=
+ {=0D=0A      width: 2% !important;=0D=0A      max-width: 2%;=0D=0A    }=0D=
+=0A=0D=0A    .moz-text-html .mj-column-per-51 {=0D=0A      width: 51% !impo=
+rtant;=0D=0A      max-width: 51%;=0D=0A    }=0D=0A=0D=0A    .moz-text-html =
+.mj-column-per-10 {=0D=0A      width: 10% !important;=0D=0A      max-width=
+: 10%;=0D=0A    }=0D=0A=0D=0A    .moz-text-html .mj-column-per-80 {=0D=0A  =
+    width: 80% !important;=0D=0A      max-width: 80%;=0D=0A    }=0D=0A=0D=
+=0A  </style>=0D=0A  <style type=3D"text/css">=0D=0A  </style>=0D=0A  <styl=
+e type=3D"text/css">=0D=0A    /* beautify ignore:start */=0D=0A      /*  */=
+=0D=0A      /* beautify ignore:end */=0D=0A    /* beautify ignore:start */=
+=0D=0A      /*  */=0D=0A      /* beautify ignore:end */=0D=0A    a,=0D=0A  =
+  a:active,=0D=0A    a:link,=0D=0A    a:visited {=0D=0A      text-decoratio=
+n: underline;=0D=0A      /* beautify ignore:start */=0D=0A        color: #2=
+975D1;=0D=0A        /* beautify ignore:end */=0D=0A    }=0D=0A=0D=0A    h1,=
+=0D=0A    h2,=0D=0A    h3,=0D=0A    h4,=0D=0A    div,=0D=0A    table {=0D=
+=0A      /* beautify ignore:start */=0D=0A        font-family: 'Open Sans',=
+ Arial, sans-serif!important;=0D=0A        /* beautify ignore:end */=0D=0A =
+   }=0D=0A=0D=0A    p.disclaimer-links a {=0D=0A      text-decoration: unde=
+rline;=0D=0A      /* beautify ignore:start */=0D=0A        color: #2975D1!i=
+mportant;=0D=0A        /* beautify ignore:end */=0D=0A    }=0D=0A=0D=0A    =
+@media only screen and (max-width:320px) {=0D=0A      body {=0D=0A        w=
+idth: 320px;=0D=0A      }=0D=0A    }=0D=0A=0D=0A    @media (prefers-color-s=
+cheme: dark) {=0D=0A=0D=0A      h1,=0D=0A      h2,=0D=0A      h3,=0D=0A    =
+  h4,=0D=0A      h5,=0D=0A      p,=0D=0A      td,=0D=0A      li,=0D=0A     =
+ a,=0D=0A      p.disclaimer-links a,=0D=0A      span.dark-mode {=0D=0A     =
+   color: #F5F5F5 !important;=0D=0A      }=0D=0A=0D=0A      a,=0D=0A      a=
+:active,=0D=0A      a:link,=0D=0A      a:visited {=0D=0A        text-decora=
+tion: underline;=0D=0A        /* beautify ignore:start */=0D=0A        colo=
+r: #F5F5F5 !important;=0D=0A        /* beautify ignore:end */=0D=0A      }=
+=0D=0A=0D=0A      .darkmode {=0D=0A        background-color: #000 !importan=
+t;=0D=0A      }=0D=0A=0D=0A      .darkmode div.ptv-section table {=0D=0A   =
+     background-color: #000 !important;=0D=0A      }=0D=0A=0D=0A      .dark=
+mode div.SVI-section table {=0D=0A        background-color: #000 !important=
+;=0D=0A      }=0D=0A=0D=0A      .section-divider {=0D=0A        border-bott=
+om: 4px solid #fff !important;=0D=0A      }=0D=0A=0D=0A      .ptv-line-divi=
+der {=0D=0A        border-bottom: 2px solid #fff !important;=0D=0A      }=
+=0D=0A=0D=0A      .SVI-line-divider {=0D=0A        border-bottom: 2px solid=
+ #fff !important;=0D=0A      }=0D=0A=0D=0A      .line-divider,=0D=0A      p=
+.line-divider-socialMedia {=0D=0A        border-bottom: 1px solid #fff !im=
+portant;=0D=0A      }=0D=0A    }=0D=0A=0D=0A    @media only screen and (min=
+-width:480px) {=0D=0A      h2 span.ptv-header {=0D=0A        display: inlin=
+e-block !important;=0D=0A        font-size: 24px !important;=0D=0A        l=
+ine-height: 150% !important;=0D=0A        font-weight: 700 !important;=0D=
+=0A      }=0D=0A=0D=0A      h2 span.programName {=0D=0A        display: blo=
+ck !important;=0D=0A        font-size: 24px !important;=0D=0A        line-h=
+eight: 150% !important;=0D=0A        font-weight: 400 !important;=0D=0A    =
+  }=0D=0A=0D=0A      h2 span.SVI-header {=0D=0A        display: block !impo=
+rtant;=0D=0A        font-size: 24px !important;=0D=0A        line-height: 1=
+50% !important;=0D=0A        font-weight: 700 !important;=0D=0A      }=0D=
+=0A=0D=0A      h2 span.SVI-programName {=0D=0A        display: block !impor=
+tant;=0D=0A        font-size: 24px !important;=0D=0A        line-height: 15=
+0% !important;=0D=0A        font-weight: 400 !important;=0D=0A      }=0D=0A=
+=0D=0A      div.SVI-tsrtext p {=0D=0A        margin: 0 0 10px !important;=
+=0D=0A      }=0D=0A=0D=0A      p.subheaderText {=0D=0A        font-size: 35=
+px;=0D=0A        line-height: 150%;=0D=0A        font-weight: 400;=0D=0A   =
+     mso-line-height-rule: exactly;=0D=0A        font-weight: normal;=0D=0A=
+        margin: 5px 0 0;=0D=0A        word-break: keep-all;=0D=0A      }=0D=
+=0A=0D=0A      h2 span {=0D=0A        font-size: 35px !important;=0D=0A    =
+    line-height: 120% !important;=0D=0A        mso-line-height-rule: exactl=
+y;=0D=0A      }=0D=0A=0D=0A      h2.no-hero {=0D=0A        font-size: 50px =
+!important;=0D=0A        line-height: 120% !important;=0D=0A        mso-lin=
+e-height-rule: exactly;=0D=0A      }=0D=0A=0D=0A      h2.no-hero span {=0D=
+=0A        font-size: 35px !important;=0D=0A        line-height: 120% !impo=
+rtant;=0D=0A        mso-line-height-rule: exactly;=0D=0A      }=0D=0A=0D=0A=
+      h2.companyName {=0D=0A        font-size: 32px !important;=0D=0A      =
+  line-height: 100% !important;=0D=0A        mso-line-height-rule: exactly;=
+=0D=0A      }=0D=0A=0D=0A      h2.socialMediaText {=0D=0A        font-size:=
+ 32px !important;=0D=0A        line-height: 100% !important;=0D=0A        m=
+so-line-height-rule: exactly;=0D=0A        margin: 10px 0 13px;=0D=0A      =
+}=0D=0A=0D=0A      h3.email-content {=0D=0A        font-size: 16px !importa=
+nt;=0D=0A        line-height: 140% !important;=0D=0A        mso-line-height=
+-rule: exactly;=0D=0A      }=0D=0A=0D=0A      .desktop-text-left td {=0D=0A=
+        text-align: left !important;=0D=0A      }=0D=0A=0D=0A      .persona=
+ h2 {=0D=0A        font-size: 24px !important;=0D=0A        line-height: 10=
+0% !important;=0D=0A        mso-line-height-rule: exactly;=0D=0A        fon=
+t-weight: 700 !important;=0D=0A        margin: 20px 0 !important;=0D=0A    =
+  }=0D=0A=0D=0A      h2.whyThisInformation {=0D=0A        font-size: 24px !=
+important;=0D=0A        line-height: 100% !important;=0D=0A        mso-line=
+-height-rule: exactly;=0D=0A        margin: 20px 0;=0D=0A        font-weigh=
+t: bold;=0D=0A      }=0D=0A=0D=0A      .tsr-preview h3 {=0D=0A        font-=
+size: 24px !important;=0D=0A      }=0D=0A=0D=0A      h4 {=0D=0A        font=
+-size: 16px;=0D=0A        font-weight: normal;=0D=0A        line-height: 10=
+0%;=0D=0A        mso-line-height-rule: exactly;=0D=0A        margin: 10px 0=
+;=0D=0A      }=0D=0A    }=0D=0A=0D=0A  </style>=0D=0A  <meta name=3D"viewpo=
+rt" content=3D"width=3Ddevice-width, initial-scale=3D1" />=0D=0A  <meta nam=
+e=3D"color-scheme" content=3D"light dark" />=0D=0A  <!--[if mso]>  =0D=0A  =
+<style type=3D"text/css">=0D=0A    h1,=0D=0A    h2,=0D=0A    h3,=0D=0A    h=
+4,=0D=0A    div,=0D=0A    table {=0D=0A      /* beautify ignore:start */=0D=
+=0A      font-family:'Open Sans', Arial, sans-serif !important;=0D=0A      =
+/* beautify ignore:end */=0D=0A    }=0D=0A=0D=0A      a,=0D=0A      a:activ=
+e,=0D=0A      a:link,=0D=0A      a:visited {=0D=0A        text-decoration: =
+underline;=0D=0A      }=0D=0A    h2 span {=0D=0A      font-size: 35px !impo=
+rtant;=0D=0A      line-height: 120% !important;=0D=0A      mso-line-height-=
+rule: exactly;=0D=0A    }=0D=0A=0D=0A     h2.no-hero {=0D=0A      font-size=
+: 50px !important;=0D=0A      line-height: 120% !important;=0D=0A      mso-=
+line-height-rule: exactly;=0D=0A    }=0D=0A=0D=0A    h2.no-hero span {=0D=
+=0A      font-size: 35px !important;=0D=0A      line-height: 120% !importan=
+t;=0D=0A      mso-line-height-rule: exactly;=0D=0A    }=0D=0A=0D=0A    p.su=
+bheaderText {=0D=0A      font-size: 35px !important;=0D=0A      line-height=
+: 120% !important;=0D=0A      mso-line-height-rule: exactly;=0D=0A    }=0D=
+=0A=0D=0A    h2.companyName {=0D=0A        font-size: 32px !important;=0D=
+=0A        line-height: 100% !important;=0D=0A        mso-line-height-rule:=
+ exactly;=0D=0A        margin: 10px 0 13px;=0D=0A        font-weight: 700;=
+=0D=0A    }=0D=0A=0D=0A    h2.socialMediaText {=0D=0A        font-size: 32p=
+x !important;=0D=0A        line-height: 100% !important;=0D=0A        mso-l=
+ine-height-rule: exactly;=0D=0A        font-weight: 700;=0D=0A        margi=
+n: 10px 0 13px;=0D=0A    }=0D=0A=0D=0A    h3 {=0D=0A        font-size: 24px=
+;=0D=0A        line-height: 100%;=0D=0A        mso-line-height-rule: exactl=
+y;=0D=0A        margin: 20px 0px;=0D=0A      }=0D=0A=0D=0A=0D=0A     h3.ema=
+il-content {=0D=0A      font-size: 16px !important;=0D=0A      line-height:=
+ 140% !important;=0D=0A      mso-line-height-rule: exactly;=0D=0A    }=0D=
+=0A=0D=0A    h3.htmljobcust-header {=0D=0A      font-size: 16px;=0D=0A     =
+ line-height: 140%;=0D=0A      mso-line-height-rule: exactly;=0D=0A    }=0D=
+=0A=0D=0A    .persona h2 {=0D=0A      font-size: 24px !important;=0D=0A    =
+  line-height: 100% !important;=0D=0A      mso-line-height-rule: exactly;=
+=0D=0A      font-weight: 700 !important;=0D=0A      margin: 20px 0 !importa=
+nt;=0D=0A    }=0D=0A    =0D=0A     h2 span.ptv-header {=0D=0A      display:=
+block !important;=0D=0A      font-size: 24px !important;=0D=0A      line-he=
+ight: 150% !important;=0D=0A      font-weight: 700 !important;=0D=0A    }=
+=0D=0A=0D=0A    h2 span.programName {=0D=0A      display:block !important;=
+=0D=0A      font-size: 24px !important;=0D=0A      line-height: 24px !impor=
+tant;=0D=0A      font-weight: 400 !important;=0D=0A    }=0D=0A   =0D=0A=0D=
+=0A     h2 span.SVI-header  {=0D=0A      display:block !important;=0D=0A   =
+   font-size: 24px !important;=0D=0A      line-height: 36px !important;=0D=
+=0A      font-weight: 700 !important;=0D=0A    }=0D=0A=0D=0A    h2 span.SVI=
+-programName {=0D=0A      display:block !important;=0D=0A      font-size: 2=
+4px !important;=0D=0A      line-height: 24px !important;=0D=0A      font-we=
+ight: 400 !important;=0D=0A    }=0D=0A=0D=0A    div.SVI-tsrtext p {=0D=0A  =
+      margin:0 0 10px !important;=0D=0A      }=0D=0A      .h2-svi {=0D=0A  =
+      font-size: 24px !important;=0D=0A        line-height: 36px !important=
+;=0D=0A        mso-line-height-rule: exactly;=0D=0A        margin: 0px !imp=
+ortant;=0D=0A      }=0D=0A=0D=0A      .ptv-h2 {=0D=0A        font-size: 16p=
+x !important;=0D=0A        line-height: 36px !important;=0D=0A        mso-l=
+ine-height-rule: exactly;=0D=0A        margin: 0px !important;=0D=0A       =
+}=0D=0A=0D=0A       .SVI-header {=0D=0A        font-size: 24px !important;=
+=0D=0A        line-height: 36px !important;=0D=0A        mso-line-height-ru=
+le: exactly;=0D=0A      }=0D=0A=0D=0A       .SVI-programName {=0D=0A       =
+ font-size: 24px !important;=0D=0A        line-height: 24px !important;=0D=
+=0A        mso-line-height-rule: exactly;=0D=0A       }=0D=0A=0D=0A    .des=
+ktop-text-left td {=0D=0A      text-align: left !important;=0D=0A    }=0D=
+=0A=0D=0A    .right-arrow {=0D=0A        font-family: Calibri, sans-serif;=
+=0D=0A    }=0D=0A=0D=0A    .tsr-preview h3 {=0D=0A      font-size: 24px !im=
+portant;=0D=0A      margin:0 0 20px !important;=0D=0A    }=0D=0A=0D=0A  </s=
+tyle>=0D=0A  <![endif]-->=0D=0A  <!--[if gte mso 16]> =0D=0A<style>=0D=0A =
+=0D=0Aa.darkmode-2021 { =0D=0Amso-style-textfill-type:gradient; =0D=0Amso-s=
+tyle-textfill-fill-gradientfill-stoplist:"0 #2975D1 -1 100000\,99000 #2975D=
+1 -1 100000"; =0D=0Acolor:#000000 !important;=0D=0A} =0D=0Ap.disclaimer-lin=
+ks a { =0D=0Amso-style-textfill-type:gradient; =0D=0Amso-style-textfill-fil=
+l-gradientfill-stoplist:"0 #2975D1 -1 100000\,99000 #2975D1 -1 100000"; =0D=
+=0Acolor:#000000 !important;=0D=0A} =0D=0A</style> =0D=0A<![endif]-->=0D=0A=
+</head>=0D=0A=0D=0A<body style=3D"word-spacing:normal;">=0A  <div style=3D"=
+display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max=
+-width:0px;opacity:0;overflow:hidden;">=0A    <!---->=0A    You are receivi=
+ng this notification to educate you on important information related to one=
+ or more of your holdings. Details in this material may include investment =
+strategy, performance tracking and other key information.=0A    <!----> =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=0A  </div>=0A  <div class=3D"dark=
+mode" style=3D"">=0A    <!--[if mso | IE]><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:768px;" width=3D"768" bgcolor=3D"#FFFFFF" ><tr><td style=3D"li=
+ne-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->=0A =
+   <div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px aut=
+o;max-width:768px;">=0A      <table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#FFFFF=
+F;background-color:#FFFFFF;width:100%;">=0A        <tbody>=0A          <tr>=
+=0A            <td style=3D"border-top:6px solid #306A7C;direction:ltr;font=
+-size:0px;padding:0;text-align:center;">=0A              <!--[if mso | IE]>=
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td class=3D"" style=3D"vertical-align:top;width:768px;" ><![endif]-=
+->=0A              <div class=3D"mj-column-per-100 mj-outlook-group-fix" st=
+yle=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;ver=
+tical-align:top;width:100%;">=0A                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%">=0A      =
+            <tbody>=0A                    <tr>=0A                      <td =
+style=3D"vertical-align:top;padding:20px;">=0A                        <tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"" width=3D"100%">=0A                          <tbody>=0A            =
+                <tr>=0A                              <td align=3D"left" sty=
+le=3D"font-size:0px;padding:0;word-break:break-word;">=0A                  =
+              <div style=3D"font-family:Open Sans;font-size:0px;line-height=
+:0;text-align:left;color:#333333;">=0A                                  <!-=
+-DO NOT REMOVE: Force mjml to import 'Open Sans'-->=0A                     =
+           </div>=0A                              </td>=0A                 =
+           </tr>=0A                            <!--  -->=0A                =
+            <tr>=0A                              <td align=3D"center" style=
+=3D"font-size:0px;padding:0;word-break:break-word;">=0A                    =
+            <div style=3D"font-family:'Open Sans', Arial, sans-serif !impor=
+tant;font-size:16px;line-height:1;text-align:center;color:#306A7C;">=0A    =
+                              <!-- -->=0A                                  =
+<h1 style=3D"font-size: 40px; font-weight: 600; line-height: 100%; mso-line=
+-height-rule: exactly; word-break: keep-all; margin: 0;"></h1>=0A          =
+                        <!--  -->=0A                                </div>=
+=0A                              </td>=0A                            </tr>=
+=0A                            <!--  -->=0A                            <!--=
+  -->=0A                            <tr>=0A                              <t=
+d align=3D"left" style=3D"font-size:0px;padding:0;padding-top:35px;word-bre=
+ak:break-word;">=0A                                <div style=3D"font-famil=
+y:'Open Sans', Arial, sans-serif !important;font-size:16px;line-height:140%=
+;text-align:left;color:#333333;"><img src=3D"https://assets.infocus-platfor=
+m.broadridge.com/content/dam/infocus/heroImages/0XN/HEROIMAGE_0XN.JPG" aria=
+-hidden=3D"true" width=3D"728" alt=3D"A young woman sits in the back seat o=
+f a car, smiling as she looks  down at her smartphone which she holds in bo=
+th hands. She has long dark hair and is wearing a colorful patterned scarf.=
+" style=3D"width:100% !important;" /></div>=0A                             =
+ </td>=0A                            </tr>=0A                            <!=
+--  -->=0A                          </tbody>=0A                        </ta=
+ble>=0A                      </td>=0A                    </tr>=0A          =
+        </tbody>=0A                </table>=0A              </div>=0A      =
+        <!--[if mso | IE]></td></tr></table><![endif]-->=0A            </td=
+>=0A          </tr>=0A        </tbody>=0A      </table>=0A    </div>=0A    =
+<!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D=
+"width:768px;" width=3D"768" bgcolor=3D"#FFFFFF" ><tr><td style=3D"line-hei=
+ght:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->=0A    <di=
+v style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-=
+width:768px;">=0A      <table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#FFFFFF;back=
+ground-color:#FFFFFF;width:100%;">=0A        <tbody>=0A          <tr>=0A   =
+         <td style=3D"direction:ltr;font-size:0px;padding:0px 20px 0px;text=
+-align:center;">=0A              <!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" st=
+yle=3D"vertical-align:top;width:728px;" ><![endif]-->=0A              <div =
+class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;tex=
+t-align:left;direction:ltr;display:inline-block;vertical-align:top;width:10=
+0%;">=0A                <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%">=0A                  <tbody>=0A=
+                    <tr>=0A                      <td style=3D"vertical-alig=
+n:top;padding:0;">=0A                        <table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"" width=3D"100%">=
+=0A                          <tbody>=0A                            <tr>=0A =
+                             <td align=3D"left" style=3D"font-size:0px;padd=
+ing:20px 20px;word-break:break-word;">=0A                                <d=
+iv style=3D"font-family:'Open Sans', Arial, sans-serif !important;font-size=
+:16px;line-height:140%;text-align:left;color:#333333;">=0A                 =
+                 <!---->=0A                                  <!---->=0A    =
+                              <h2 class=3D"no-hero" style=3D"font-size: 50p=
+x; line-height: 120%; font-weight: 400; mso-line-height-rule: exactly; font=
+-weight: normal; margin: 0; word-break: keep-all; color: #306A7C;">=0A     =
+                               Stay Informed!=0A                           =
+       </h2>=0A                                  <p class=3D"subheaderText =
+dark-mode" style=3D"font-size: 35px; line-height: 150%; font-weight: 400; m=
+so-line-height-rule: exactly; font-weight: normal; margin: 5px 0 0; word-br=
+eak: keep-all; color: #306A7C;">View your investment information</p>=0A    =
+                              <!---->=0A                                  <=
+!---->=0A                                </div>=0A                         =
+     </td>=0A                            </tr>=0A                          =
+  <tr>=0A                              <td align=3D"left" class=3D"header" =
+style=3D"font-size:0px;padding:20px 20px 0px;word-break:break-word;">=0A   =
+                             <div style=3D"font-family:'Open Sans', Arial, =
+sans-serif !important;font-size:16px;line-height:140%;text-align:left;color=
+:#333333;">=0A                                  <!---->=0A                 =
+                 <!---->=0A                                  <!---->=0A    =
+                              <p style=3D"font-size: 16px; line-height: 140=
+%; mso-line-height-rule: exactly; margin-bottom: 40px;">You are receiving t=
+his notification to educate you on important information related to one or =
+more of your holdings. Details in this material may include investment stra=
+tegy, performance tracking and other key information.</p>=0A               =
+                   <!---->=0A                                </div>=0A     =
+                         </td>=0A                            </tr>=0A      =
+                    </tbody>=0A                        </table>=0A         =
+             </td>=0A                    </tr>=0A                  </tbody>=
+=0A                </table>=0A              </div>=0A              <!--[if =
+mso | IE]></td></tr></table><![endif]-->=0A            </td>=0A          </=
+tr>=0A        </tbody>=0A      </table>=0A    </div>=0A    <!--[if mso | IE=
+]></td></tr></table><![endif]-->=0A    <!--  -->=0A    <!--  -->=0A    <!--=
+  -->=0A    <!--  -->=0A    <!--  -->=0A    <!--  -->=0A    <!-- SVI sectio=
+n start -->=0A    <!--  -->=0A    <!-- SVI section end -->=0A    <!-- ptvFl=
+ag section start -->=0A    <!--  -->=0A    <!--  -->=0A    <!-- ptv flag en=
+d section -->=0A    <!--[if mso | IE]><table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=
+=3D"width:768px;" width=3D"768" bgcolor=3D"#FFFFFF" ><tr><td style=3D"line-=
+height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->=0A    =
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;m=
+ax-width:768px;">=0A      <table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#FFFFFF;=
+background-color:#FFFFFF;width:100%;">=0A        <tbody>=0A          <tr>=
+=0A            <td style=3D"direction:ltr;font-size:0px;padding:0px 20px 20=
+px;text-align:center;">=0A              <!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=
+=3D"" style=3D"vertical-align:top;width:728px;" ><![endif]-->=0A           =
+   <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size=
+:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;=
+width:100%;">=0A                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" width=3D"100%">=0A                  <tbo=
+dy>=0A                    <tr>=0A                      <td style=3D"vertica=
+l-align:top;padding:0;">=0A                        <table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"" width=3D"1=
+00%">=0A                          <tbody>=0A                            <tr=
+>=0A                              <td align=3D"left" class=3D"header" style=
+=3D"font-size:0px;padding:0px 20px 0px;word-break:break-word;">=0A         =
+                       <div style=3D"font-family:'Open Sans', Arial, sans-s=
+erif !important;font-size:16px;line-height:140%;text-align:left;color:#3333=
+33;">=0A                                  <!---->=0A                       =
+           <!---->=0A                                </div>=0A             =
+                 </td>=0A                            </tr>=0A              =
+            </tbody>=0A                        </table>=0A                 =
+     </td>=0A                    </tr>=0A                  </tbody>=0A     =
+           </table>=0A              </div>=0A              <!--[if mso | IE=
+]></td></tr></table><![endif]-->=0A            </td>=0A          </tr>=0A  =
+      </tbody>=0A      </table>=0A    </div>=0A    <!--[if mso | IE]></td><=
+/tr></table><![endif]-->=0A    <!-- begin:TSR_LOOP -->=0A    <!--  -->=0A  =
+  <!-- end:TSR_LOOP -->=0A    <!-- begin:HHBEGIN_LOOP -->=0A    <!--  -->=
+=0A    <!-- end:HHBEGIN_LOOP -->=0A    <!-- begin:Shareholder Connect -->=
+=0A    <!--  -->=0A    <!-- end:Shareholder Connect -->=0A    <!-- begin:UR=
+LS_LOOP -->=0A    <!--  -->=0A    <!--  -->=0A    <!--[if mso | IE]><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+" role=3D"presentation" style=3D"width:768px;" width=3D"768" bgcolor=3D"#FF=
+FFFF" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:=
+exactly;"><![endif]-->=0A    <div style=3D"background:#FFFFFF;background-co=
+lor:#FFFFFF;margin:0px auto;max-width:768px;">=0A      <table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"background:#FFFFFF;background-color:#FFFFFF;width:100%;">=0A      =
+  <tbody>=0A          <tr>=0A            <td style=3D"direction:ltr;font-si=
+ze:0px;padding:20px 20px 40px 20px;text-align:center;">=0A              <!-=
+-[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td class=3D"" width=3D"768px" ><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:728px;" width=3D"728" bgcolor=3D"#FFFFFF" ><tr><td=
+ style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![e=
+ndif]-->=0A              <div style=3D"background:#FFFFFF;background-color:=
+#FFFFFF;margin:0px auto;max-width:728px;">=0A                <table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"background:#FFFFFF;background-color:#FFFFFF;width:100%;">=
+=0A                  <tbody>=0A                    <tr>=0A                 =
+     <td style=3D"direction:ltr;font-size:0px;padding:20px;text-align:cente=
+r;">=0A                        <!--[if mso | IE]><table role=3D"presentatio=
+n" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" styl=
+e=3D"vertical-align:top;width:688px;" ><![endif]-->=0A                     =
+   <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size=
+:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;=
+width:100%;">=0A                          <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%">=0A          =
+                  <tbody>=0A                              <tr>=0A          =
+                      <td style=3D"vertical-align:top;padding:0;">=0A      =
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"" width=3D"100%">=0A               =
+                     <tbody>=0A                                      <tr>=
+=0A                                        <td align=3D"left" style=3D"font=
+-size:0px;padding:0;word-break:break-word;">=0A                            =
+              <div style=3D"font-family:'Open Sans', Arial, sans-serif !imp=
+ortant;font-size:16px;line-height:140%;text-align:left;color:#333333;">=0A =
+                                           <!-- <img src=3D"images/evercap-=
+funds-logo.png" alt=3D"Evercap Funds" /> -->=0A                            =
+                <!-- <p class=3D"line-divider" style=3D"border-bottom-color=
+:#333333;">&#160;</p> -->=0A                                            <h2=
+ class=3D"companyName" style=3D"font-size: 28px; line-height: 100%; mso-lin=
+e-height-rule: exactly; margin: 10px 0 13px; font-weight: 700;">META PLATFO=
+RMS, INC.</h2>=0A                                          </div>=0A       =
+                                 </td>=0A                                  =
+    </tr>=0A                                      <tr>=0A                  =
+                      <td align=3D"left" class=3D"fund-details" style=3D"fo=
+nt-size:0px;padding:0;word-break:break-word;">=0A                          =
+                <div style=3D"font-family:'Open Sans', Arial, sans-serif !i=
+mportant;font-size:16px;line-height:140%;text-align:left;color:#333333;">=
+=0A                                            <h3 style=3D"font-size: 24px=
+; font-weight: 700; line-height: 100%; mso-line-height-rule: exactly; margi=
+n: 20px 0;">Important Materials</h3>=0A                                    =
+        <p class=3D"line-divider" style=3D"padding: 0; border-bottom-width:=
+ 1px; border-bottom-style: solid; mso-line-height-rule: exactly; margin: 10=
+px 0; border-bottom-color: #333333; font-size: 0; line-height: 0;">&#160;</=
+p>=0A                                            <!---->=0A                =
+                            <p style=3D"font-size: 16px; line-height: 130%;=
+ mso-line-height-rule: exactly; margin: 10px 0;">=0A                       =
+                       <a style=3D"font-size: 20px; line-height: 130%; mso-=
+line-height-rule: exactly; margin-top: 0px; margin-bottom: 20px; text-decor=
+ation: none; color: #2975D1;" class=3D"darkmode-2021" href=3D"https://notif=
+ications1.brcc.tsr.prd.dep.digital-delivery.com/f/a/vTxvZdVQcR_HvOjcLy6GOg~=
+~/AAAAAQA~/RgRs0DtuP0RJaHR0cHM6Ly9tYXRlcmlhbHMucHJveHl2b3RlLmNvbS9BcHByb3Zl=
+ZC8zMDMwM00vMjAyNjEwMjAvSU5GU1RfNjQzNDMwLlBERlcQa2V5c3BhY2VfZGVmYXVsdEIKAAB=
+utu1qo0mJ_VIRTUlSRE1JUkBHTUFJTC5DT01YBAAAAABBCAA1c_5hJFYTSBpSRUFMVElNRUVNQU=
+lMUy5JTkZPQ1VTX1BYWQlRBAAAAABHWnsiZGVwX21zZ19pZCI6IjkxNDAxN3wyOTE1MTYzfDI3N=
+DVjMzBhLTY1YjUtNDEzYy1hMWJkLTE2YzE2MzEwMGQzYiIsImRlcF9ydW5faWQiOiI5MTQwMTci=
+fQ~~">=0A                                                Information Statem=
+ent<span class=3D"right-arrow" aria-hidden=3D"true" style=3D"font-family:Ca=
+libri, sans-serif;">&#160;&#160;&#8594;</span>=0A                          =
+                    </a>=0A                                            </p>=
+=0A                                            <!---->=0A                  =
+                        </div>=0A                                        </=
+td>=0A                                      </tr>=0A                       =
+             </tbody>=0A                                  </table>=0A      =
+                          </td>=0A                              </tr>=0A   =
+                         </tbody>=0A                          </table>=0A  =
+                      </div>=0A                        <!--[if mso | IE]></=
+td></tr></table><![endif]-->=0A                      </td>=0A              =
+      </tr>=0A                  </tbody>=0A                </table>=0A     =
+         </div>=0A              <!--[if mso | IE]></td></tr></table></td></=
+tr></table><![endif]-->=0A            </td>=0A          </tr>=0A        </t=
+body>=0A      </table>=0A    </div>=0A    <!--[if mso | IE]></td></tr></tab=
+le><![endif]-->=0A    <!--  -->=0A    <!--  -->=0A    <!-- end:URLS_LOOP --=
+>=0A    <!-- begin:IIURLS_LOOP -->=0A    <!--  -->=0A    <!--  -->=0A    <!=
+--  -->=0A    <!-- end:IIURLS_LOOP -->=0A    <!--  -->=0A    <!--  -->=0A  =
+  <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:768px;" w=
+idth=3D"768" bgcolor=3D"#FFFFFF" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->=0A    <div style=3D"backg=
+round:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:768px;">=
+=0A      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"background:#FFFFFF;background-color:#=
+FFFFFF;width:100%;">=0A        <tbody>=0A          <tr>=0A            <td s=
+tyle=3D"direction:ltr;font-size:0px;padding:0 20px 20px 20px;text-align:cen=
+ter;">=0A              <!--[if mso | IE]><table role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"ver=
+tical-align:top;width:728px;" ><![endif]-->=0A              <div class=3D"m=
+j-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:le=
+ft;direction:ltr;display:inline-block;vertical-align:top;width:100%;">=0A  =
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%">=0A                  <tbody>=0A           =
+         <tr>=0A                      <td style=3D"vertical-align:top;paddi=
+ng:0;">=0A                        <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"" width=3D"100%">=0A         =
+                 <tbody>=0A                            <tr>=0A             =
+                 <td align=3D"left" style=3D"font-size:0px;padding:0;word-b=
+reak:break-word;">=0A                                <div style=3D"font-fam=
+ily:'Open Sans', Arial, sans-serif !important;font-size:16px;line-height:14=
+0%;text-align:left;color:#333333;">=0A                                  <p =
+class=3D"section-divider" style=3D"padding: 0; margin: 0 20px; mso-line-hei=
+ght-rule: exactly; border-bottom-width: 4px; border-bottom-style: solid; bo=
+rder-bottom-color: #333333; font-size: 0; line-height: 0;">&#160;</p>=0A   =
+                             </div>=0A                              </td>=
+=0A                            </tr>=0A                          </tbody>=
+=0A                        </table>=0A                      </td>=0A       =
+             </tr>=0A                  </tbody>=0A                </table>=
+=0A              </div>=0A              <!--[if mso | IE]></td></tr></table=
+><![endif]-->=0A            </td>=0A          </tr>=0A        </tbody>=0A  =
+    </table>=0A    </div>=0A    <!--[if mso | IE]></td></tr></table><![endi=
+f]-->=0A    <!--  -->=0A    <!--  -->=0A    <!--  -->=0A    <!--  -->=0A   =
+ <!--  -->=0A    <!--  -->=0A    <!--  -->=0A    <!-- SURVEY SECTION START =
+-->=0A    <!-- =0A      =0A      =0A      =0A=0A       =0A      // this loo=
+p is to check if you have Annual Report in TSR funds=0A      =0A=0A      //=
+ this checks if you have Annual Report in non-TSR fund=0A      =0A     =0A=
+=0A    // Only show the survey section if there is only a single fund and i=
+t has an Annual Report=0A        =0A=0A    // Hide if clientType is "regist=
+ered"=0A    =0A=0A    // Hide if clientId is in the "No contact" exclusion =
+list=0A    =0A      =0A    =0A=0A    // Hide if clientId is in the Fidelity=
+ / Pershing exclusion list=0A    =0A=0A    // Hide if clientId is in the NF=
+S / Fidelity exclusion list=0A    =0A      =0A    =0A=0A    =0A=0A     -->=
+=0A    <!--  -->=0A    <!-- SURVEY SECTION ENDS -->=0A    <!--  -->=0A    <=
+!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:768px;" widt=
+h=3D"768" bgcolor=3D"#FFFFFF" ><tr><td style=3D"line-height:0px;font-size:0=
+px;mso-line-height-rule:exactly;"><![endif]-->=0A    <div style=3D"backgrou=
+nd:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:768px;">=0A  =
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFF=
+F;width:100%;">=0A        <tbody>=0A          <tr>=0A            <td style=
+=3D"direction:ltr;font-size:0px;padding:30px 40px 20px;text-align:center;">=
+=0A              <!--[if mso | IE]><table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-=
+align:top;width:688px;" ><![endif]-->=0A              <div class=3D"mj-colu=
+mn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;dir=
+ection:ltr;display:inline-block;vertical-align:top;width:100%;">=0A        =
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" width=3D"100%">=0A                  <tbody>=0A                  =
+  <tr>=0A                      <td style=3D"vertical-align:top;padding:0;">=
+=0A                        <table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"" width=3D"100%">=0A                =
+          <tbody>=0A                            <!--  -->=0A               =
+             <tr>=0A                              <td align=3D"left" style=
+=3D"font-size:0px;padding:0;padding-bottom:20px;word-break:break-word;">=0A=
+                                <div style=3D"font-family:'Open Sans', Aria=
+l, sans-serif !important;font-size:16px;line-height:140%;text-align:left;co=
+lor:#333333;">=0A                                  <p><strong>Job #:</stron=
+g> P59342</p>=0A                                </div>=0A                  =
+            </td>=0A                            </tr>=0A                   =
+         <!--  -->=0A                            <tr>=0A                   =
+           <td align=3D"left" style=3D"font-size:0px;padding:0;word-break:b=
+reak-word;">=0A                                <div style=3D"font-family:'O=
+pen Sans', Arial, sans-serif !important;font-size:14px;line-height:150%;tex=
+t-align:left;color:#333333;">=0A                                  <p>=0A   =
+                                 =0A                                  </p>=
+=0A                                  <p class=3D"disclaimer-links">=0A     =
+                               <a href=3D"https://notifications1.brcc.tsr.p=
+rd.dep.digital-delivery.com/f/a/4bslXa9moa9h_LiJxtiBnA~~/AAAAAQA~/RgRs0DtuP=
+0Q6aHR0cDovL3d3dy5pbnZlc3RvcmRlbGl2ZXJ5LmNvbS83SDA3NzAxMzQxNDQ2OT9sYW5ndWFn=
+ZT1lblcQa2V5c3BhY2VfZGVmYXVsdEIKAAButu1qo0mJ_VIRTUlSRE1JUkBHTUFJTC5DT01YBAA=
+AAABBCAA1c_5hJFYTSBpSRUFMVElNRUVNQUlMUy5JTkZPQ1VTX1BYWQlRBAAAAABHWnsiZGVwX3=
+J1bl9pZCI6IjkxNDAxNyIsImRlcF9tc2dfaWQiOiI5MTQwMTd8MjkxNTE2M3wyNzQ1YzMwYS02N=
+WI1LTQxM2MtYTFiZC0xNmMxNjMxMDBkM2IifQ~~">Email Settings</a> <span aria-hidd=
+en=3D"true"> | </span> <a href=3D"https://notifications1.brcc.tsr.prd.dep.d=
+igital-delivery.com/f/a/S6KwbebgkLf7PaI9wGOnow~~/AAAAAQA~/RgRs0DtuP0RCaHR0c=
+HM6Ly93d3cuYnJvYWRyaWRnZS5jb20vX2Fzc2V0cy9wZGYvYnJvYWRyaWRnZS11c2FnZS1ub3Rp=
+Y2UucGRmVxBrZXlzcGFjZV9kZWZhdWx0QgoAAG627WqjSYn9UhFNSVJETUlSQEdNQUlMLkNPTVg=
+EAAAAAEEIADVz_mEkVhNIGlJFQUxUSU1FRU1BSUxTLklORk9DVVNfUFhZCVEEAAAAAEdaeyJkZX=
+BfcnVuX2lkIjoiOTE0MDE3IiwiZGVwX21zZ19pZCI6IjkxNDAxN3wyOTE1MTYzfDI3NDVjMzBhL=
+TY1YjUtNDEzYy1hMWJkLTE2YzE2MzEwMGQzYiJ9">Usage Notice</a>=0A               =
+                   </p>=0A                                </div>=0A        =
+                      </td>=0A                            </tr>=0A         =
+                 </tbody>=0A                        </table>=0A            =
+          </td>=0A                    </tr>=0A                  </tbody>=0A=
+                </table>=0A              </div>=0A              <!--[if mso=
+ | IE]></td></tr></table><![endif]-->=0A            </td>=0A          </tr>=
+=0A        </tbody>=0A      </table>=0A    </div>=0A    <!--[if mso | IE]><=
+/td></tr></table><![endif]-->=0A  </div>=0A=0D=0A<img border=3D"0" width=3D=
+"1" height=3D"1" alt=3D"" src=3D"https://notifications1.brcc.tsr.prd.dep.di=
+gital-delivery.com/q/a2GcToxljrw1DDV4aEGivw~~/AAAAAQA~/RgRs0DtuPlcQa2V5c3Bh=
+Y2VfZGVmYXVsdEIKAAButu1qo0mJ_VIRTUlSRE1JUkBHTUFJTC5DT01YBAAAAABBCAA1c_5hJFY=
+TSBpSRUFMVElNRUVNQUlMUy5JTkZPQ1VTX1BYWQlRBAAAAABHWnsiZGVwX3J1bl9pZCI6IjkxND=
+AxNyIsImRlcF9tc2dfaWQiOiI5MTQwMTd8MjkxNTE2M3wyNzQ1YzMwYS02NWI1LTQxM2MtYTFiZ=
+C0xNmMxNjMxMDBkM2IifQ~~">=0D=0A</body>=0D=0A=0D=0A</html>=0D=0A
+

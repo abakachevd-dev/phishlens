@@ -1,0 +1,38 @@
+Received: from mail.badhost.example (unknown [203.0.113.77]) by mx.google.com
+ with ESMTP; Mon, 23 Nov 2026 10:02:11 -0800
+Authentication-Results: mx.google.com; spf=fail; dkim=fail; dmarc=fail
+From: "Microsoft Billing" <billing@micros0ft-billing.com>
+To: you@example.org
+Subject: Invoice 4471 attached
+Date: Mon, 23 Nov 2026 18:02:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============8526339322024067068=="
+
+--===============8526339322024067068==
+Content-Type: multipart/alternative;
+ boundary="===============1675790447486553449=="
+
+--===============1675790447486553449==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+This message needs an HTML-capable mail client.
+
+--===============1675790447486553449==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+<p>Your payment is overdue. Please open the attached invoice immediately.</p>
+
+--===============1675790447486553449==--
+
+--===============8526339322024067068==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice_4471.pdf.exe"
+MIME-Version: 1.0
+
+aGFybWxlc3MgZHVtbXkgYnl0ZXM=
+
+--===============8526339322024067068==--

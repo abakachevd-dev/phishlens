@@ -1,0 +1,29 @@
+Received: from mail.badhost.example (unknown [203.0.113.77]) by mx.google.com
+ with ESMTP; Mon, 23 Nov 2026 10:02:11 -0800
+Authentication-Results: mx.google.com; spf=softfail; dkim=none; dmarc=fail
+From: "USPS Delivery" <notice@usps-redelivery.help>
+Reply-To: support.desk.2291@gmail.com
+Return-Path: <x@mailer-bounce.example>
+To: you@example.org
+Subject: Final notice: package could not be delivered
+Date: Mon, 23 Nov 2026 18:02:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============3402832008837047146=="
+
+--===============3402832008837047146==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+This message needs an HTML-capable mail client.
+
+--===============3402832008837047146==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<p>Your package could not be delivered. Act now to avoid return. Reschedule i=
+mmediately:</p><p><a href=3D"http://bit.ly/3xYzRedeliver">https://www.usps.co=
+m/redelivery</a></p>
+
+--===============3402832008837047146==--

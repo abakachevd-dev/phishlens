@@ -1,0 +1,723 @@
+Delivered-To: mirdmir@gmail.com
+Received: by 2002:a8a:124a:0:b0:64d:b27a:e592 with SMTP id b10csp1363740ocp;
+        Thu, 29 Oct 2026 14:50:33 -0700 (PDT)
+X-Received: by 2002:a05:620a:29c1:b0:93f:228c:52fc with SMTP id af79cd13be357-9442175b13emr85099085a.58.1793310632984;
+        Thu, 29 Oct 2026 14:50:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1793310632; cv=none;
+        d=google.com; s=arc-20260327;
+        b=irUWY/3RuZZQdjEwWUznG5TbcYX50x6libXwPnbXLx54L2VPRjqywqlGHwHVsA9dDm
+         Oo+7loSvCnI1xM8EkDuvtCErench/qdgvnYZhTOUoAULlq138J5RZZd18wkGlle2Ij4I
+         u1pcU3KFM3CeIGzpOnqm5jRmxhHqeV39ATxzMaTM98q6QQ3ZLDt/95Yk/EO0Py599co7
+         lBypttta9s3kEmBNJwUpVpODTybFYzdKOlML9LC7kL4+cr6nQjTx9NIeLswDM99BfmWH
+         jbbx/yn2JtfSSyngAkfZYIIzHb8uHPaXW5V/6g8FIWi5pIHQirNllyTQScpAjiim11n/
+         MV1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=feedback-id:date:message-id:subject:emailmessageid:subscriber_id
+         :bulletin_recipient_id:errors-to:list-unsubscribe:open_flag
+         :list-unsubscribe-post:to:from:mime-version:dkim-signature
+         :dkim-signature;
+        bh=9RvJijuZQ1QvNug6hPq/bvAEYQX5qP1GIluIkVuFE58=;
+        fh=c07DhML/LDdf6JcshlK8jqOWGI3CM6NGQ+kjT+/XmLc=;
+        b=D2pBebbHlmaM1++xT7C8bkXcZtP+IYtXBKBXzbnrqIHBp+kqeE2ZkSHTlUwf0svA39
+         qw+UgS/bLPx3zPY1EtEpqacmnK2W3Q6P3AD7ZXQoBhGcn94WMdtVS+Vg+aIHeqAnWqEz
+         XQ85CepGGi7ZCMZ0ZSq+QdMM+qRWxmmXul/IjcC0vI/I2sipHZb8D1Z+nNyBjNB83XHl
+         gbVPMQ80NV3ld29YlJKOGg6SQz/v9Qm7rMVDzTQI6Ct0EczCF2uf4t68c9r78zyv6V2k
+         d/vGMCBT7q/SyNsLH87eLyZialVdpaKh8rKDaPagrVQ7Mez870AGfDrFXwkbJaAFd1v+
+         xBBg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@service.govdelivery.com header.s=susxgepztawjzgtevosnyeachdnyniki header.b=NG+BF8H5;
+       dkim=pass header.i=@messagingfabric.com header.s=in7apov3fjwbn2eotd4aqddjaw3ayzgt header.b=KrhKkiNo;
+       spf=pass (google.com: domain of 010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@bounce-1.service.govdelivery.com designates 66.179.19.10 as permitted sender) smtp.mailfrom=010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@bounce-1.service.govdelivery.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=service.govdelivery.com
+Return-Path: <010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@bounce-1.service.govdelivery.com>
+Received: from mailer019010.govdeliveryservice.com (mailer019010.govdeliveryservice.com. [66.179.19.10])
+        by mx.google.com with ESMTPS id af79cd13be357-944213b4603si45164185a.475.2026.10.29.14.50.32
+        for <mirdmir@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 29 Oct 2026 14:50:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@bounce-1.service.govdelivery.com designates 66.179.19.10 as permitted sender) client-ip=66.179.19.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@service.govdelivery.com header.s=susxgepztawjzgtevosnyeachdnyniki header.b=NG+BF8H5;
+       dkim=pass header.i=@messagingfabric.com header.s=in7apov3fjwbn2eotd4aqddjaw3ayzgt header.b=KrhKkiNo;
+       spf=pass (google.com: domain of 010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@bounce-1.service.govdelivery.com designates 66.179.19.10 as permitted sender) smtp.mailfrom=010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@bounce-1.service.govdelivery.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=service.govdelivery.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=susxgepztawjzgtevosnyeachdnyniki; d=service.govdelivery.com;
+	t=1793310632;
+	h=Content-Type:MIME-Version:From:To:List-Unsubscribe-Post:List-Unsubscribe:Subject:Message-ID:Date;
+	bh=KbLWv7GUF4zaz8zxYkN5ydzzP7efFRTYvlqoCKIBzts=;
+	b=NG+BF8H5c/89sdJTfo/WJ5/z4aY4wHcel+pXp9wiffJ3/KFucWOfgAF7MMxhcTzL
+	6pSS/dDALC6CpsnhuZ4sY5fiHu+5c/V9FFECm2OwOiMoo//GJ3RTNzfopv0WHUIazEs
+	TlbrWXcBKAQHlmGCk5+ft0XWPtDaLRALEKUIqxY98PzZeQ2clEq4O3fHDVJrNQq7I54
+	z8lYg7+DSKdz9b0NpE3Nti0VzPnlKhJuu8q68BlCtaFegyaho/TjUf0x9neB8uzXeKn
+	PuFQz2QJN1IGNp2v7hYbB4NXlF84NvRh2+AJMOt1N8eSFvukSQawW2tK/bvIX+ydW4q
+	21RpurL5oA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=in7apov3fjwbn2eotd4aqddjaw3ayzgt; d=messagingfabric.com;
+	t=1793310632;
+	h=Content-Type:MIME-Version:From:To:List-Unsubscribe-Post:List-Unsubscribe:Subject:Message-ID:Date:Feedback-ID;
+	bh=KbLWv7GUF4zaz8zxYkN5ydzzP7efFRTYvlqoCKIBzts=;
+	b=KrhKkiNoS5ACHVQeoETDdFFF90QKvpbKUSzSYKH65P9gb4pMEh0FxgnBd14xrfgV
+	ZcamxmYPukZe5T9gSlprEn3NhrGlA6pFbE3GzapVcwbmq3VnJsnjpvUskKQKEfeVx9f
+	1/5WRTgI/9XU2ORRdy6z99GB1/Bd/uKofXHieEBw=
+Content-Type: multipart/mixed; boundary="===============4662796106483737653=="
+MIME-Version: 1.0
+From: "Internal Revenue Service (IRS)" <irs@service.govdelivery.com>
+To: mirdmir@gmail.com
+X-Accountcode: USIRS
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+open_flag: true
+List-Unsubscribe: <https://public.govdelivery.com/accounts/USIRS/subscriber/one_click_unsubscribe?verification=5.9d37618777cdef7993fff61a4d30f66f&destination=mirdmir%40gmail.com>
+Errors-To: messages@service.govdelivery.com
+bulletin_recipient_id: 301582226529
+x-subscriber: 3.cg1fFr13I392u6CSUTyKufbhGVrQpXSQAt8+YdgudMKBbOdnoSA93niq/kusR3g25qYz5hQeOw8MWbY5siUUkFEyPRGvwvobvg+xnpFgTYqLLLicCMVlG/BDU26Q+1erB/9IOdCEzhb2vrS/+/okrQ==
+subscriber_id: 3650193082
+emailMessageID: 20261029.37154961::BP3
+Subject: =?US-ASCII?Q?Tax_Cuts_Benefiting_Working_Americans?=
+Message-ID: <010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000@us-east-1.messagingfabric.com>
+Date: Thu, 29 Oct 2026 21:50:32 +0000
+Feedback-ID: ::1.us-east-1.YkyD7oCkb0MV34/3yFYMBHQ75ckP89d/sDoA4gFybkE=:AmazonSES
+X-SES-Outgoing: 2026.10.29-66.179.19.10
+
+--===============4662796106483737653==
+Content-Type: multipart/alternative; boundary="===============0481163478136098500=="
+MIME-Version: 1.0
+
+--===============0481163478136098500==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+2020 Patriotic Image [ https://irs.gov ]=20
+=20
+=20
+=20
+=20
+
+Tax Cuts Benefiting Working Americans
+=20
+=20
+=20
+=20
+
+Last year, President Donald J. Trump signed into law the Working Families T=
+ax Cuts, landmark legislation that ushered in a new era of tax relief and p=
+revented the largest tax increase in American history from taking effect. T=
+his past filing season over 110 million refunds were issued, and *over 67 m=
+illion filers* took advantage of at least one tax break from the Working Fa=
+milies Tax Cuts:
+
+
+  * No tax on tips;=20
+  * No tax on overtime;=20
+  * No tax on car loan interest (for qualifying vehicles);=20
+  * Or an enhanced deduction for America=E2=80=99s seniors.=20
+
+These new provisions enabled working and older Americans to keep more of th=
+eir hard-earned money.
+
+
+  * More than *30 million* workers claimed the *No Tax on Overtime* deducti=
+on with an average benefit of *over $3,100*=20
+  * More than *38 million* Americans 65 and older claimed the *enhanced sen=
+ior deduction* with an average deduction of *over $7,500*=20
+  * Nearly *8 million *workers claimed the *No Tax on Tips* deduction with =
+an average deduction of *over $7,000*=20
+  * *1.5 million* filers claimed the *No Tax on Made-in-America Car Loan In=
+terest* with an average benefit of *over $1,800*=20
+
+Americans who claimed these new tax cuts this year received real, meaningfu=
+l tax relief. If you did not and may be eligible, here is the good news =E2=
+=80=93 the no tax on tips, no tax on overtime, no tax on car loan interest,=
+ and the enhanced senior deductions are all in place until at least 2028. F=
+or more information about these provisions and eligibility requirements, pl=
+ease visit the IRS=E2=80=99s Working Families Tax Cuts website [ https://ww=
+w.irs.gov/newsroom/one-big-beautiful-bill-provisions-individuals-and-worker=
+s ].
+
+With these new tax cuts in effect, and the dedicated staff at the IRS, we r=
+ecently completed the most successful tax filing season in history.
+
+
+  * The average refund was 11% larger than last year=20
+  * 98% of returns were filed electronically=20
+  * Over 90% of refunds were issued in less than three weeks=20
+
+Hardworking Americans like you are keeping more of what they earn because o=
+f President Trump=E2=80=99s historic tax cuts.
+
+Frank J. Bisignano
+Chief Executive Officer
+Internal Revenue Service
+
+=C2=A0
+
+NOTE: This e-mail from the Internal Revenue Service is for informational pu=
+rposes and does not constitute a communication about a taxpayer=E2=80=99s s=
+pecific situation. The IRS does not generally send e-mails to taxpayers.
+
+=20
+=20
+=20
+=20
+
+Update your subscriptions, modify your password or email address, or stop s=
+ubscriptions at any time on your=C2=A0Subscriber Preferences Page [ https:/=
+/public.govdelivery.com/accounts/USIRS/subscriber/new?preferences=3Dtrue ].=
+ You will need to use your email address to log in. If you have questions o=
+r problems with the subscription service, please contact=C2=A0subscriberhel=
+p.govdelivery.com [ https://subscriberhelp.govdelivery.com/ ].
+
+
+This service is provided to you at no charge by the=C2=A0Internal Revenue S=
+ervice (IRS) [ https://www.irs.gov/ ].
+
+=20
+=20
+=20
+=20
+ =20
+=20
+body .abe-column-block {min-height: 5px;} _________________________________=
+_______________________________________
+
+This email was sent to mirdmir@gmail.com by: Internal Revenue Service (IRS)=
+ =C2=B7 Internal Revenue Service =C2=B7 1111 Constitution Ave. N.W. =C2=B7 =
+Washington, D.C. 20535 Granicus Communications logo [ https://granicus.com/=
+solution/digital-communication-engagement/ ]=20
+body .abe-column-block { min-height: 5px; } table.gd_combo_table img {margi=
+n-left:10px; margin-right:10px;} table.gd_combo_table div.govd_image_displa=
+y img, table.gd_combo_table td.gd_combo_image_cell img {margin-left:0px; ma=
+rgin-right:0px;}
+
+--===============0481163478136098500==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en">
+<head>
+<title>    Tax Cuts Benefiting Working Americans
+</title>
+    <meta name=3D"viewport" content=3D"initial-scale=3D1.0">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+      table {border-collapse: collapse;}
+  </style>
+  <![endif]-->
+<style type=3D"text/css">
+  /* Make columns expand to 100% on small screens */
+  @media only screen and (max-width: 480px) {
+    .abe-column-block {
+      min-width: 100%;
+    }
+  }
+  .abe-section-label {
+    display: none;
+  }
+  /* Disables Apple clients adding blue color and underline to links and ot=
+her text */
+  a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+  }
+</style>
+
+
+</head>
+<body style=3D"">
+
+
+<!--[if (gte mso 9)|(IE)]>
+  <table style=3D"display:none"><tr><td><a name=3D"gd_top" id=3D"gd_top"></=
+a></td></tr></table>
+<![endif]-->
+<a name=3D"gd_top" id=3D"gd_top"></a>
+
+ =20
+
+
+
+ =20
+  <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" al=
+ign=3D"center" class=3D"gd_tbl_wrap"><tr><td style=3D"background-color: #dd=
+dddd; margin: 0; padding: 0; width: 100% !important" bgcolor=3D"#dddddd">
+<table id=3D"flexible-abe-main-table" width=3D"100%" align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"-webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; border-spacing: 0; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; padding-top: 30px; padding-bottom: 20px;">
+  <tr>
+    <td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"></td>
+    <!-- centered column -->
+    <td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0">
+    <tr>
+      <td>
+<![endif]-->
+<div class=3D"abe-section-block" data-block-type=3D"FancyBlockSection" data=
+-test=3D"test" data-block-id=3D"178552430">
+  <table class=3D"abe-section-table" width=3D"100%" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+ax-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr id=3D"abe-section-row-1e319c8b-0c0c-48ce-b34e-3f7fe4b20d89" class=
+=3D"abe-section-row" style=3D"background-color: #FFFFFF;" bgcolor=3D"#FFFFF=
+F">
+      <td style=3D"text-align: center; vertical-align: top; font-size: 0; -=
+webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt;" align=3D"center" valign=3D"top">
+        <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <td width=3D"600" valign=3D"top" id=3D"abe-column-block-86595696-b0be-4e4=
+c-89e0-a06bb3770157-outlook-only" class=3D"abe-column-block-outlook-only" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF;" bgcolor=
+=3D"#FFFFFF">
+<![endif]-->
+<div id=3D"abe-column-block-86595696-b0be-4e4c-89e0-a06bb3770157" class=3D"=
+abe-column-block" data-block-type=3D"FancyBlockColumn" data-block-id=3D"178=
+552431" style=3D"width: 100%; box-sizing: border-box; display: inline-block=
+; font-size: 16px; vertical-align: top; background-color: #FFFFFF;">
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"table-layout: fixed; overflow=
+-wrap: break-word; word-wrap: break-word; text-align: left; -webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; border-spacing: 0; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+      <td class=3D"abe-column-block-padding" id=3D"abe-column-block-8659569=
+6-b0be-4e4c-89e0-a06bb3770157-padding" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; padding: 0px 0px 2px;"><table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt;"><tr><td align=3D"center" style=3D"-webkit-text-size-adjust: 100%;=
+ -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"=
+><a href=3D"https://links-1.govdelivery.com/CL0/https:%2F%2Firs.gov/1/01000=
+1a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000/aF86kquMu_adiTtf7mj=
+QyVLi4539191VanJ5LGBPohw=3D452" target=3D"_blank" rel=3D"noopener noreferre=
+r" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"><i=
+mg class=3D"govd_template_image" src=3D"https://content.govdelivery.com/att=
+achments/fancy_images/USIRS/2020/04/3293891/2020-04-14-irs-commish-approved=
+-patrioticbanner_original.png" style=3D"width: 600px; height: auto; -ms-int=
+erpolation-mode: bicubic; line-height: 1; outline: none; text-decoration: n=
+one; max-width: 100%; border: none;" alt=3D"2020 Patriotic Image" width=3D"=
+600" height=3D"88"></a></td></tr></table></td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+  </td>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  </tr>
+  </table>
+<![endif]-->
+      </td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+    </tr>
+  </table>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0">
+    <tr>
+      <td>
+<![endif]-->
+<div class=3D"abe-section-block" data-block-type=3D"FancyBlockSection" data=
+-test=3D"test" data-block-id=3D"178552433">
+  <table class=3D"abe-section-table" width=3D"100%" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+ax-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr id=3D"abe-section-row-e08d4959-53db-4cbe-b5e8-b283ddfac7e5" class=
+=3D"abe-section-row" style=3D"background-color: #2e74b5;" bgcolor=3D"#2e74b=
+5">
+      <td style=3D"text-align: center; vertical-align: top; font-size: 0; -=
+webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt;" align=3D"center" valign=3D"top">
+        <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <td width=3D"600" valign=3D"top" id=3D"abe-column-block-0fd79bdc-99f6-461=
+d-a947-459636da1e70-outlook-only" class=3D"abe-column-block-outlook-only" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt;">
+<![endif]-->
+<div id=3D"abe-column-block-0fd79bdc-99f6-461d-a947-459636da1e70" class=3D"=
+abe-column-block" data-block-type=3D"FancyBlockColumn" data-block-id=3D"178=
+552434" style=3D"width: 100%; box-sizing: border-box; display: inline-block=
+; font-size: 16px; vertical-align: top;">
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"table-layout: fixed; overflow=
+-wrap: break-word; word-wrap: break-word; text-align: left; -webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; border-spacing: 0; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+      <td class=3D"abe-column-block-padding" id=3D"abe-column-block-0fd79bd=
+c-99f6-461d-a947-459636da1e70-padding" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; padding: 5px;"><h1 style=3D"line-height: 1.2; color: #bdd6ee; font-fami=
+ly: arial, helvetica, sans-serif; font-size: 40px; text-align: left; margin=
+: 0 0 10px;" align=3D"left">Tax Cuts Benefiting Working Americans</h1></td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+  </td>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  </tr>
+  </table>
+<![endif]-->
+      </td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+    </tr>
+  </table>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0">
+    <tr>
+      <td>
+<![endif]-->
+<div class=3D"abe-section-block" data-block-type=3D"FancyBlockSection" data=
+-test=3D"test" data-block-id=3D"178552436">
+  <table class=3D"abe-section-table" width=3D"100%" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+ax-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr id=3D"abe-section-row-1a95ea3b-8135-4067-be4f-271b9fc4707e" class=
+=3D"abe-section-row" style=3D"background-color: #f2f2f2;" bgcolor=3D"#f2f2f=
+2">
+      <td style=3D"text-align: center; vertical-align: top; font-size: 0; -=
+webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt;" align=3D"center" valign=3D"top">
+        <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <td width=3D"600" valign=3D"top" id=3D"abe-column-block-e2b78397-eec8-4ea=
+5-b721-3da14da44330-outlook-only" class=3D"abe-column-block-outlook-only" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f2f2f2;" bgcolor=
+=3D"#f2f2f2">
+<![endif]-->
+<div id=3D"abe-column-block-e2b78397-eec8-4ea5-b721-3da14da44330" class=3D"=
+abe-column-block" data-block-type=3D"FancyBlockColumn" data-block-id=3D"178=
+552437" style=3D"width: 100%; box-sizing: border-box; display: inline-block=
+; font-size: 16px; vertical-align: top; background-color: #f2f2f2;">
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"table-layout: fixed; overflow=
+-wrap: break-word; word-wrap: break-word; text-align: left; -webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; border-spacing: 0; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+      <td class=3D"abe-column-block-padding" id=3D"abe-column-block-e2b7839=
+7-eec8-4ea5-b721-3da14da44330-padding" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; padding: 15px;">
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left"><span d=
+ata-olk-copy-source=3D"MessageBody" style=3D"line-height: 1.4;">Last year, =
+President Donald J. Trump signed into law the Working Families Tax Cuts, la=
+ndmark legislation that ushered in a new era of tax relief and prevented th=
+e largest tax increase in American history from taking effect. This past fi=
+ling season over 110 million refunds were issued, and <strong>over 67 milli=
+on filers</strong> took advantage of at least one tax break from the Workin=
+g Families Tax Cuts:</span></p>
+<ul type=3D"disc" style=3D"margin-top: 0px; margin-bottom: 15px;">
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left; margin-top: 0px;">No tax on tips;</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left;">No tax on overtime;</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left;">No tax on car loan interest (for qualif=
+ying vehicles);</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left; margin-bottom: 15px;">Or an enhanced ded=
+uction for America=E2=80=99s seniors.</li>
+</ul>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">These n=
+ew provisions enabled working and older Americans to keep more of their har=
+d-earned money.</p>
+<ul type=3D"disc" style=3D"margin-top: 0px; margin-bottom: 15px;">
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left; margin-top: 0px;">More than <strong>30 m=
+illion</strong> workers claimed the <strong>No Tax on Overtime</strong> ded=
+uction with an average benefit of <strong>over $3,100</strong>
+</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left;">More than <strong>38 million</strong> A=
+mericans 65 and older claimed the <strong>enhanced senior deduction</strong=
+> with an average deduction of <strong>over $7,500</strong>
+</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left;">Nearly <strong>8 million </strong>worke=
+rs claimed the <strong>No Tax on Tips</strong> deduction with an average de=
+duction of <strong>over $7,000</strong>
+</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left; margin-bottom: 15px;">
+<strong>1.5 million</strong> filers claimed the <strong>No Tax on Made-in-A=
+merica Car Loan Interest</strong> with an average benefit of <strong>over $=
+1,800</strong>
+</li>
+</ul>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">America=
+ns who claimed these new tax cuts this year received real, meaningful tax r=
+elief. If you did not and may be eligible, here is the good news =E2=80=93 =
+the no tax on tips, no tax on overtime, no tax on car loan interest, and th=
+e enhanced senior deductions are all in place until at least 2028. For more=
+ information about these provisions and eligibility requirements, please vi=
+sit the <a href=3D"https://links-1.govdelivery.com/CL0/https:%2F%2Fwww.irs.=
+gov%2Fnewsroom%2Fone-big-beautiful-bill-provisions-individuals-and-workers/=
+1/010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000/wuMlC495O1uT=
+pPlqaUIxWgV1lcpetAsPHGr0WxBoZPU=3D452" target=3D"_blank" title=3D"https://w=
+ww.irs.gov/newsroom/one-big-beautiful-bill-provisions-individuals-and-worke=
+rs" data-auth=3D"NotApplicable" data-linkindex=3D"0" rel=3D"noopener" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #007=
+3AF;">IRS=E2=80=99s Working Families Tax Cuts website</a>.</p>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">With th=
+ese new tax cuts in effect, and the dedicated staff at the IRS, we recently=
+ completed the most successful tax filing season in history.</p>
+<ul type=3D"disc" style=3D"margin-top: 0px; margin-bottom: 15px;">
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left; margin-top: 0px;">The average refund was=
+ 11% larger than last year</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left;">98% of returns were filed electronicall=
+y</li>
+<li style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; li=
+ne-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px;=
+ color: #000000; text-align: left; margin-bottom: 15px;">Over 90% of refund=
+s were issued in less than three weeks</li>
+</ul>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">Hardwor=
+king Americans like you are keeping more of what they earn because of Presi=
+dent Trump=E2=80=99s historic tax cuts.<br><br></p>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">Frank J=
+. Bisignano<br>Chief Executive Officer<br>Internal Revenue Service</p>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">=C2=A0<=
+/p>
+<div>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">NOTE: T=
+his e-mail from the Internal Revenue Service is for informational purposes =
+and does not constitute a communication about a taxpayer=E2=80=99s specific=
+ situation. The IRS does not generally send e-mails to taxpayers.</p>
+</div>
+</td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+  </td>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  </tr>
+  </table>
+<![endif]-->
+      </td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+    </tr>
+  </table>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0">
+    <tr>
+      <td>
+<![endif]-->
+<div class=3D"abe-section-block" data-block-type=3D"FancyBlockSection" data=
+-test=3D"test" data-block-id=3D"178552439">
+  <table class=3D"abe-section-table" width=3D"100%" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+ax-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr id=3D"abe-section-row-52a7ef9c-3623-4a9a-969a-4581dd060240" class=
+=3D"abe-section-row" style=3D"background-color: #dddddd;" bgcolor=3D"#ddddd=
+d">
+      <td style=3D"text-align: center; vertical-align: top; font-size: 0; -=
+webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt;" align=3D"center" valign=3D"top">
+        <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  <td width=3D"600" valign=3D"top" id=3D"abe-column-block-ba7f9be8-7f25-409=
+3-986a-76adbbcac375-outlook-only" class=3D"abe-column-block-outlook-only" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt; background-color: #dddddd;" bgcolor=
+=3D"#dddddd">
+<![endif]-->
+<div id=3D"abe-column-block-ba7f9be8-7f25-4093-986a-76adbbcac375" class=3D"=
+abe-column-block" data-block-type=3D"FancyBlockColumn" data-block-id=3D"178=
+552440" style=3D"width: 100%; box-sizing: border-box; display: inline-block=
+; font-size: 16px; vertical-align: top; background-color: #dddddd;">
+  <table width=3D"100%" align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"table-layout: fixed; overflow=
+-wrap: break-word; word-wrap: break-word; text-align: left; -webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; border-spacing: 0; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt;">
+    <tr>
+      <td class=3D"abe-column-block-padding" id=3D"abe-column-block-ba7f9be=
+8-7f25-4093-986a-76adbbcac375-padding" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; padding: 15px;">
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">Update =
+your subscriptions, modify your password or email address, or stop subscrip=
+tions at any time on your=C2=A0<a href=3D"https://links-1.govdelivery.com/C=
+L0/https:%2F%2Fpublic.govdelivery.com%2Faccounts%2FUSIRS%2Fsubscriber%2Fnew=
+%3Fpreferences=3Dtrue/1/010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c4=
+61-000000/UJBtgSP2VqLRKMgUU-DcUkDEJu1avfgsLu35hvKbWB0=3D452" style=3D"-webk=
+it-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #0073AF;">Sub=
+scriber Preferences Page</a>. You will need to use your email address to lo=
+g in. If you have questions or problems with the subscription service, plea=
+se contact=C2=A0<a href=3D"https://links-1.govdelivery.com/CL0/https:%2F%2F=
+subscriberhelp.govdelivery.com%2F/1/010001a189a4aa73-c38bdf22-68be-4b81-990=
+f-03e47dc0c461-000000/474ipdbBjTrf4AARsiH9H-9MfGRwJoFiPfIDVK6B9dk=3D452" st=
+yle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #=
+0073AF;">subscriberhelp.govdelivery.com</a>.</p>
+<p style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; lin=
+e-height: 1.4; font-family: arial, helvetica, sans-serif; font-size: 14px; =
+color: #000000; text-align: left; margin: 0 0 15px;" align=3D"left">This se=
+rvice is provided to you at no charge by the=C2=A0<a href=3D"https://links-=
+1.govdelivery.com/CL0/https:%2F%2Fwww.irs.gov%2F/1/010001a189a4aa73-c38bdf2=
+2-68be-4b81-990f-03e47dc0c461-000000/_sNspL83YWpa0Yx4xi4gcAL7obtf8UOQ-k8BtJ=
+EC5Ss=3D452" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; color: #0073AF;">Internal Revenue Service (IRS)</a>.</p>
+</td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+  </td>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+  </tr>
+  </table>
+<![endif]-->
+      </td>
+    </tr>
+  </table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+    </tr>
+  </table>
+<![endif]-->
+</td>
+    <td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"></td>
+  </tr>
+</table>
+</td></tr></table>
+ =20
+
+
+<div id=3D"mail_footer">
+    <style type=3D"text/css">body .abe-column-block {min-height: 5px;}</sty=
+le>
+
+</div>
+<div id=3D"tagline">
+    <hr>
+<table style=3D"width: 100%;" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0">
+<tbody>
+<tr>
+<td style=3D"color: #757575; font-size: 10px; font-family: Arial;" width=3D=
+"89%">This email was sent to mirdmir@gmail.com by: Internal Revenue Service=
+ (IRS) =C2=B7 Internal Revenue Service =C2=B7 1111 Constitution Ave. N.W. =
+=C2=B7 Washington, D.C. 20535</td>
+<td align=3D"right" width=3D"11%"><a href=3D"https://links-1.govdelivery.co=
+m/CL0/https:%2F%2Fgranicus.com%2Fsolution%2Fdigital-communication-engagemen=
+t%2F/1/010001a189a4aa73-c38bdf22-68be-4b81-990f-03e47dc0c461-000000/aJ-WlqZ=
+l6xPhtvEm3umcqMO51o3yPLuPyjB-6FFsEtQ=3D452" target=3D"_blank" rel=3D"noopen=
+er"><img src=3D"https://content.govdelivery.com/images/govd-logo-dark.png" =
+border=3D"0" alt=3D"Granicus Communications logo" width=3D"115"></a></td>
+
+</tr>
+</tbody>
+</table>
+<style type=3D"text/css">body .abe-column-block { min-height: 5px; } table.=
+gd_combo_table img {margin-left:10px; margin-right:10px;} table.gd_combo_ta=
+ble div.govd_image_display img, table.gd_combo_table td.gd_combo_image_cell=
+ img {margin-left:0px; margin-right:0px;}</style>
+
+</div>
+
+<img alt=3D"" src=3D"https://links-1.govdelivery.com/CI1/010001a189a4aa73-c=
+38bdf22-68be-4b81-990f-03e47dc0c461-000000/HtFsuZ86ifdMCmm74dAXJ3hOyK2_Dj6V=
+GOyJIj0QzhM=3D452" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+--===============0481163478136098500==--
+
+--===============4662796106483737653==--

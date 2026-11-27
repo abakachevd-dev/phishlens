@@ -1,0 +1,30 @@
+Received: from mail.badhost.example (unknown [203.0.113.77]) by mx.google.com
+ with ESMTP; Mon, 23 Nov 2026 10:02:11 -0800
+Authentication-Results: mx.google.com; spf=fail; dkim=none; dmarc=fail
+From: "Internal Revenue Service" <refund@irs-gov-secure.top>
+Reply-To: claims@irs-gov-secure.top
+Return-Path: <bounce@irs-gov-secure.top>
+To: you@example.org
+Subject: You have an unclaimed tax refund
+Date: Mon, 23 Nov 2026 18:02:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============0128889755760759096=="
+
+--===============0128889755760759096==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+This message needs an HTML-capable mail client.
+
+--===============0128889755760759096==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<p>You are owed a refund. Verify your identity within 24 hours and confirm yo=
+ur Social Security number to claim it.</p><p><a href=3D"https://click.mailtra=
+ck.example/f/RgRs0DtuP0RJaHR0cDovLzE4NS4yMjAuMTAxLjQvaXJzL2xvZ2luLnBocA~~">Cl=
+aim refund</a></p>
+
+--===============0128889755760759096==--
